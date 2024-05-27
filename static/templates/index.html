@@ -1,0 +1,315 @@
+{% extends "base.html" %}
+
+{% block title %}论坛首页{% endblock %}
+
+{% block head %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Webestica.com">
+<meta name="description" content="Bootstrap 5 based Social Media Network and Community Theme">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
+<!-- Plugins CSS -->
+<link rel="stylesheet" type="text/css" href="../static/vendor/font-awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap-icons/bootstrap-icons.css">
+
+<!-- Theme CSS -->
+<link id="style-switch" rel="stylesheet" type="text/css" href="../static/css/style.css">
+<style>
+    .textlimit{
+        overflow: hidden;
+    /*white-space: nowrap;*/
+    text-overflow: ellipsis;
+    max-width: 400px;
+    max-height: 70px;
+
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row g-4">
+      <!-- Main content START -->
+      <div class="col-lg-8">
+        <div class="bg-mode p-4">
+          <h1 class="h4 mb-4">话题广场</h1>
+          <!-- Blog item START -->
+          <div class="card bg-transparent border-0">
+            <div class="row g-3">
+              <div class="col-4">
+                <!-- Blog image -->
+                <img class="rounded" src="../static/images/4by3/03.jpg" alt="">
+              </div>
+              <div class="col-8">
+                <!-- Blog caption -->
+                <a href="#" class="badge bg-danger bg-opacity-10 text-danger mb-2 fw-bold">Lifestyle</a>
+                <h5><a href="blog-details.html" class="btn-link stretched-link text-reset fw-bold">这里是china！一文读懂中国七大瓷都！ </a></h5>
+                <div class="d-none d-sm-inline-block">
+                  <p class="mb-2">瓷器是我国劳动人民智慧与审美的结晶，也是我国重要的文化符号之一。大约在商代中期，我国就出现了早起的瓷器。</p>
+                  <!-- BLog date -->
+                  <a class="small text-secondary" href="#!"> <i class="bi bi-calendar-date pe-1"></i> Jan 22, 2022</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Blog item END -->
+          <hr class="my-4">
+          <!-- Blog item START -->
+          <div class="card bg-transparent border-0">
+            <div class="row g-3">
+              <div class="col-4">
+                <!-- Blog image -->
+                <img class="rounded" src="../static/images/4by3/04.jpg" alt="">
+              </div>
+              <div class="col-8">
+                <!-- Blog caption -->
+                <a href="#" class="badge bg-info bg-opacity-10 text-info mb-2 fw-bold">Sports</a>
+                <h5><a href="blog-details.html" class="btn-link stretched-link text-reset fw-bold">坐标景德镇，想拥有一个属于自己一件瓷器的话，你给图，我来画。 </a></h5>
+                <div class="d-none d-sm-inline-block">
+                  <p class="mb-2">下面是我的一些瓷器烧造作品。你画我烧，拥有一件属于自己的瓷器，灌注自己的灵魂，淬火烧制绝美瓷器。
+
+                  </p>
+                  <!-- BLog date -->
+                  <a class="small text-secondary" href="#!"> <i class="bi bi-calendar-date pe-1"></i> Mar 07, 2022</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Blog item END -->
+          <hr class="my-4">
+          <!-- Blog item START -->
+          <div class="card bg-transparent border-0">
+            <div class="row g-3">
+              <div class="col-4">
+                <!-- Blog image -->
+                <img class="rounded" src="../static/images/4by3/05.jpg" alt="">
+              </div>
+              <div class="col-8">
+                <!-- Blog caption -->
+                <a href="#" class="badge bg-success bg-opacity-10 text-success mb-2 fw-bold">Business</a>
+                <h5><a href="blog-details.html" class="btn-link stretched-link text-reset fw-bold">一文看懂景德镇72道制瓷工序！建议收藏 </a></h5>
+                <div class="d-none d-sm-inline-block">
+                  <p class="mb-2">古人似乎对72这个数字情有独钟，《天工开物》中写到制瓷工序“共计一坯之力，过手七十二，方克成器，其中微细节目，尚不能尽也。” </p>
+                  <!-- BLog date -->
+                  <a class="small text-secondary" href="#!"> <i class="bi bi-calendar-date pe-1"></i> Jun 17, 2022</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Blog item END -->
+          <hr class="my-4">
+          <!-- Blog item START -->
+          {% for question in questions %}
+          <div class="card bg-transparent border-0">
+            <div class="row g-3">
+              <div class="col-4">
+                <!-- Blog image -->
+                <img class="rounded" src="../static/images/4by3/06.jpg" alt="">
+              </div>
+              <div class="col-8">
+                <!-- Blog caption -->
+                <a href="#" class="badge bg-warning bg-opacity-10 text-warning mb-2 fw-bold">Technology</a>
+                <h5><a href="{{ url_for('qa.question_detail',question_id=question.id) }}" class="btn-link stretched-link text-reset fw-bold">{{ question.title}}</a></h5>
+                <div class="d-none d-sm-inline-block">
+                  <p class="mb-2 textlimit">  {{ question.content}}</p>
+                  <!-- BLog date -->
+                  <a class="small text-secondary" href="#!"> <i class="bi bi-calendar-date pe-1"></i><span>{{ question.author.username}}</span> <span style="text-align:right">{{ question.create_time}}</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          {% endfor %}
+          <!-- Blog item END -->
+
+<div class="mt-4">
+  <nav aria-label="navigation">
+    <ul class="pagination pagination-light d-inline-block d-md-flex justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#">Prev</a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+      <li class="page-item"><a class="page-link" href="#">15</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+</div>
+ <!-- Right sidebar START -->
+ <div class="col-lg-4">
+  <div class="row g-4">
+    <!-- Card News START -->
+    <div class="col-sm-6 col-lg-12">
+      <div class="card">
+        <!-- Card header START -->
+        <div class="card-header pb-0 border-0">
+          <h5 class="card-title mb-0">每日陶瓷</h5>
+        </div>
+        <!-- Card header END -->
+        <!-- Card body START -->
+        <div class="card-body">
+          <!-- News item -->
+          <div class="mb-3">
+            <h6 class="mb-0"><a href="blog-details.html">故宫的陶瓷｜水彩插画｜合集</a></h6>
+            <small>2hr</small>
+          </div>
+          <!-- News item -->
+          <div class="mb-3">
+            <h6 class="mb-0"><a href="blog-details.html">一城一非遗.景德镇</a></h6>
+            <small>3hr</small>
+          </div>
+          <!-- News item -->
+          <div class="mb-3">
+            <h6 class="mb-0"><a href="blog-details.html">每日陶瓷</a></h6>
+            <small>4hr</small>
+          </div>
+          <!-- News item -->
+          <div class="mb-3">
+            <h6 class="mb-0"><a href="blog-details.html">英国博物馆里的只此青绿器物之美</a></h6>
+            <small>6hr</small>
+          </div>
+          <!-- Load more comments -->
+          <a href="#!" role="button" class="btn btn-link btn-link-loader btn-sm text-secondary d-flex align-items-center" data-bs-toggle="button" aria-pressed="true">
+            <div class="spinner-dots me-2">
+              <span class="spinner-dot"></span>
+              <span class="spinner-dot"></span>
+              <span class="spinner-dot"></span>
+            </div>
+            View all latest news
+          </a>
+        </div>
+        <!-- Card body END -->
+      </div>
+    </div>
+    <!-- Card News END -->
+
+     <!-- Card News START -->
+     <div class="col-sm-6 col-lg-12">
+      <div class="card">
+        <!-- Card header START -->
+        <div class="card-header pb-0 border-0">
+          <h5 class="card-title mb-0">主题</h5>
+        </div>
+        <!-- Card header END -->
+        <!-- Card body START -->
+        <div class="card-body">
+          <!-- Tag list START -->
+          <ul class="list-inline mb-0 d-flex flex-wrap gap-2">
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">瓷器</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">瓷文化历史</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">非遗</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">宋瓷</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">瓷器交易</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">青花瓷</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">新闻</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">历史</a>
+            </li>
+            <li class="list-inline-item m-0">
+              <a class="btn btn-outline-light btn-sm" href="#">欣赏</a>
+            </li>
+          </ul>
+          <!-- Tag list END -->
+        <!-- Card body END -->
+      </div>
+    </div>
+    <!-- Card News END -->
+  </div>
+  <!-- Card follow START -->
+  <div class="col-sm-6 col-lg-12">
+    <div class="card">
+      <!-- Card header START -->
+      <div class="card-header pb-0 border-0">
+        <h5 class="card-title mb-0">推荐关注</h5>
+      </div>
+      <!-- Card header END -->
+      <!-- Card body START -->
+      <div class="card-body">
+
+        <!-- Connection item START -->
+        <div class="hstack gap-2 mb-3">
+          <!-- Avatar -->
+          <div class="avatar">
+            <a href="#"> <img class="avatar-img rounded-circle" src="../static/images/avatar/11.jpg" alt=""> </a>
+          </div>
+          <!-- Title -->
+          <div class="overflow-hidden">
+            <a class="h6 mb-0" href="#!">李铭</a>
+            <p class="mb-0 small text-truncate">瓷器科普</p>
+          </div>
+          <!-- Button -->
+          <a class="btn btn-primary rounded-circle icon-md ms-auto" href="#"><i class="bi bi-person-check-fill"> </i></a>
+        </div>
+        <!-- Connection item END -->
+        
+        <!-- Connection item START -->
+        <div class="hstack gap-2 mb-3">
+          <!-- Avatar -->
+          <div class="avatar">
+            <a href="#"> <img class="avatar-img rounded-circle" src="../static/images/avatar/01.jpg" alt=""> </a>
+          </div>
+          <!-- Title -->
+          <div class="overflow-hidden">
+            <a class="h6 mb-0" href="#!">谢冰心 </a>
+            <p class="mb-0 small text-truncate">瓷历史学家</p>
+          </div>
+          <!-- Button -->
+          <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i class="fa-solid fa-plus"> </i></a>
+        </div>
+        <!-- Connection item END -->
+
+        <!-- Connection item START -->
+        <div class="hstack gap-2">
+          <!-- Avatar -->
+          <div class="avatar">
+            <a href="#"> <img class="avatar-img rounded-circle" src="../static/images/avatar/placeholder.jpg" alt=""> </a>
+          </div>
+          <!-- Title -->
+          <div class="overflow-hidden">
+            <a class="h6 mb-0" href="#!">讯哥 </a>
+            <p class="mb-0 small text-truncate">社区活跃博主</p>
+          </div>
+          <!-- Button -->
+          <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i class="fa-solid fa-plus"> </i></a>
+        </div>
+        <!-- Connection item END -->
+
+        </div>
+        <!-- Card body END -->
+      </div>
+    </div>
+    <!-- Card follow START -->
+  </div>
+  <!-- Right sidebar END -->
+</div> <!-- Row END -->
+</div>
+</div>
+<!-- Container END -->
+
+{% endblock %}

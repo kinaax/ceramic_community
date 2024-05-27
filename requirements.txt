@@ -1,0 +1,10 @@
+alembic==1.13.1
+Flask==2.2.5
+Flask==2.2.2
+Flask_Mail==0.9.1
+Flask_Migrate==4.0.7
+flask_sqlalchemy==3.1.1
+SQLAlchemy==2.0.29
+SQLAlchemy==1.4.39
+Werkzeug==2.2.3
+WTForms==3.1.2

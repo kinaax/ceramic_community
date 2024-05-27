@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*
+白：
+    象牙白：#fffef8
+
+
+青：
+    天青(1?)：#67807D
+    天青(2?)：#2F318B
+
+    靛蓝：#2F318B
+    
+*/
+
+/*  引入字体 */
+@font-face {
+    font-family: 'porcelian';
+    src: url(../resources/porfont.ttf);
+}
+
+body {
+    background-color: #fffef8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shellstyle{
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1433px;
+    height: 780px;
+    background-image: url(../image/shellstyle.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 30px;
+    transition: .2s;
+    z-index: 1;
+}
+
+.shell {
+    position: relative;
+    width: 1433px;
+    height: 780px;
+    background: #fffef8;
+    box-shadow: 0px 4px 116px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #2F318B;
+    transition: .2s;
+}
+
+.title h2 {
+    position: absolute;
+    width: 560px;
+    height: 42px;
+    font: 300 32px 'porcelian';
+    line-height: 40px;
+    text-align: center;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 30px;
+    transition: .3s;
+}
+
+.slide {
+    position: relative;
+    left: 30px;
+    top: 50%;
+    width: 30px;
+    transform: translateY(-50%);
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.iconfont {
+    font-size: 37px;
+    position: relative;
+}
+
+.box {
+    content: '';
+    width: 4px;
+    height: 100px;
+    background: #2F318B;
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon-arrow-up .box {
+    top: 4px;
+}
+
+.icon-arrow-down .box {
+    bottom: 4px;
+}
+
+.bottons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+}
+
+.botton {
+    width: 18px;
+    height: 18px;
+    background: #2F318B;
+    border-radius: 50%;
+    transition: .3s;
+    position: relative;
+}
+
+.one {
+    width: 11px;
+    height: 11px;
+    background: #fffef8;
+    border: 7px solid #2F318B;
+}
+
+.two span {
+    color: #fffef8;
+    opacity: 0;
+}
+
+.line {
+    width: 40px;
+    height: 3px;
+    background: #2F318B;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    border-radius: 10px;
+}
+
+.two .line {
+    background: #fffef8;
+    opacity: 0;
+}
+
+.botton span {
+    position: absolute;
+    font-size: 26px;
+    top: 50%;
+    transform: translateY(-55%);
+    left: 70px;
+}
+
+.main {
+    position: relative;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    text-align: center;
+}
+
+.main h2 {
+    display: block;
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    font: 400 200px 'porcelian';
+    text-align: center;
+    line-height: 300px;
+    z-index: 100;
+    color: #2F318B;
+    text-shadow: 0 5px 10px #2F318B, 0 -2px 1px #ffffff;
+    transition: .5s;
+}
+
+.circle {
+    box-sizing: border-box;
+    position: absolute;
+    top: 45px;
+    left: 145px;
+    width: 510px;
+    height: 510px;
+    transition: .3s;
+    background-image: url(../image/startbackground.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.banana {
+    position: absolute;
+    width: 780px;
+    height: 390px;
+    left: -120px;
+    top: 110px;
+    background: url();
+    background-size: contain;
+    transition: .5s;
+}
+
+.content {
+    position: absolute;
+    width: 440px;
+    height: 130px;
+    top: 260px;
+    right: 150px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.content h3 {
+    font: 400 50px 'porcelian';
+    margin-bottom: 35px;
+}
+
+.content span {
+    font: 400 25px 'porcelian';
+}
+
+.indexlink{
+    position: absolute;
+    display: block;
+    width: 350px;
+    height: 100px;
+    right: 45px;
+    top: 300px;
+    border-radius: 12px;
+    background: #fffef8;
+    border-radius: 12px;
+    border: none;
+    font-family: 'porcelian';
+    font-size: 45px;
+    text-align: center;
+    line-height: 100px;
+    color: #2F318B;
+}

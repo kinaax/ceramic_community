@@ -1,0 +1,341 @@
+body,
+div,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    cursor: default;
+    overflow: hidden;
+    font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+}
+
+@font-face
+{
+    font-family: porfont;
+    src: url(../resources/porfont.ttf);
+}
+
+#pageContain {
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.contain {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+    z-index: 0;
+}
+
+.current .contain,
+.slide .contain {
+    display: block;
+}
+
+.current {
+    display: block;
+    z-index: 1;
+}
+
+.slide {
+    display: block;
+    z-index: 2;
+}
+
+.swipe {
+    display: block;
+    z-index: 3;
+    transition-duration: 0ms !important;
+    -webkit-transition-duration: 0ms !important;
+}
+
+.page1 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page2 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page3 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page4 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page5 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page6 {
+    background-image: url(../image/porcelains_backgroundimage.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#porinfo {
+    display: none;
+    background-color: #fffff9;
+    border-left: #5F0610 3px solid;
+    border-top: #5F0610 3px solid;
+    border-bottom: #5F0610 3px solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 99.5%;
+    width: 75%;
+    position: fixed;
+    right: -75%;
+    transition: right 0.5s;
+    z-index: 9999;
+}
+
+.porinfoimgdiv {
+    margin: auto;
+    height: 40%;
+    aspect-ratio: 3/4;
+    background-image: url(../image/porborder1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+#porinfoimg{
+    margin: auto;
+    height: 95%;
+    width: 95%;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.porinfol {
+    margin: auto;
+    height: 40%;
+    width: 60%;
+    /* background-color: teal; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.porinfol h1{
+    color: black;
+    font-family: STKaiti;
+    font-size: 40px;
+}
+
+.porinfol p{
+    color: black;
+    font-family: STKaiti;
+    font-size: 30px;
+}
+
+#porname{
+    
+}
+
+#pordy{
+    
+}
+
+#porloc{
+    
+}
+
+#pordata{
+    
+}
+
+.porinfob {
+    margin: auto;
+    height: 50%;
+    width: 95%;
+    /* background-color: indianred; */
+    /* display: flex;
+    align-items: center; */
+}
+
+#porinfopara{
+    color: black;
+    font-family: STSong;
+    font-size: 30px;
+}
+
+#closeimg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 8%;
+    aspect-ratio: 1/1;
+    transition: transform 0.75s ease;
+}
+
+#closeimg:hover {
+    transition: transform 0.75s ease;
+    transform: scale(0.85) rotate(180deg);
+}
+
+.pordynastyline {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 10vw;
+    z-index: 7;
+}
+
+#navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10%;
+    right: 2.5%;
+    height: 80%;
+    width: 85%;
+    border-left: #5F0610 2.5px solid;
+}
+
+#navBar li {
+    font-family: porfont;
+    font-size: 45px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2/1;
+    margin: auto;
+    transition: 0.5s;
+}
+
+#navBar .liactive{
+    font-size: 60px;
+    transition: 0.5s;
+}
+
+.pordynasty {
+    width: 100%;
+    height: 90%;
+    position: relative;
+    top: 7.5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.pordynastylp {
+    height: 100%;
+    width: 10%;
+    display: flex;
+}
+
+#pdilp {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    animation: fadeInLeft;
+    animation-duration: 2s;
+}
+
+#pdilp p{
+    margin: auto;
+    font-family: porfont;
+    font-size: 75px;
+}
+
+.porbox {
+    height: 100%;
+    width: 80%;
+    background-color: #fffff9;
+    border: #5F0610 5px solid;
+    border-style: double;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.porcelain {
+    width: 22.5%;
+    aspect-ratio: 3/4;
+    margin: auto;
+    background-image: url(../image/porborder1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.porimg {
+    border-radius: 5px;
+    margin: auto;
+    width: 95%;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.porimg:hover {
+    transform: scale(1.1);
+}
+
+.porp {
+    font-size: 16px;
+    color: white;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    
+}
